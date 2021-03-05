@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>RetrieveForm</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% if product %}
+    <h2 class="text-center">Product Details...!!!</h2>
+
+    <table class="table" border="2">
+    <thead>
+    <tr>
+        <th>product_id</th>
+        <th>product_Name</th>
+        <th>product_class</th>
+        <th>product_color</th>
+        <th>product_weight</th>
+        <th>product_cost</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for i in product %}
+        <tr>
+        <td>{{ i.product_id }}</td>
+        <td>{{ i.product_Name }}</td>
+        <td>{{ i.product_class }}</td>
+        <td>{{ i.product_color }}</td>
+        <td>{{ i.product_weight }}</td>
+        <td>{{ i.product_cost}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table><br><br>
+<center>
+    <a href="/create/" class="btn btn-primary">Insert New Data</a>&nbsp;&nbsp;&nbsp;
+
+    <a href="/update/" class="btn btn-warning">update</a>&nbsp;&nbsp;&nbsp;<a href="/delete/" class="btn btn-danger">Delete</a>&nbsp;&nbsp;&nbsp;
+
+</center>
+{% endif %}
+</body>
+</html>
